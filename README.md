@@ -24,11 +24,11 @@ Symposium, April 2008, pp. 1071–1074.
 How Does it Work?
 -----------------
 
-Log lines are iteratively clustered, resulting in zero duplication of data, which helps ensure the algorithm stays memory efficent.
+Log lines are iteratively clustered, resulting in zero duplication of data, which helps ensure the algorithm stays memory efficient.
 The main assumption is that multi-variable tokens are rare, thus token position is used as the main feature by which lines are clustered.
 
-The prioirty of the cluster position is chosen based on the within cluster entropy of a given position. If a position is found to have
-a sufficently high within cluster entropy, it is determined to be a variable.
+The priority of the cluster position is chosen based on the within cluster entropy of a given position. If a position is found to have
+a sufficiently high within cluster entropy, it is determined to be a variable.
 
 Example cluster run
 -------------------
@@ -82,7 +82,7 @@ cluster2.indexes = [0,2]
 SSH user1 disconnect <br/>
 SSH user2 disconnect <br/>
 
-On the next pass, the entropy level of the remaining position (position 1) is suffciently high that it satifies our condition to qualify as a variable.
+On the next pass, the entropy level of the remaining position (position 1) is sufficiently high that it satisfies our condition to qualify as a variable.
 We would then create our final clusters as there are no remaining cluster position candidates.
 
 **Final Pass**
