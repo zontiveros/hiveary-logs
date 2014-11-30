@@ -1,9 +1,6 @@
 hiveary-logs
 ============
 
-About
------
-
 Hiveary Log clustering algorithm by Hiveary, Inc.
 Version 1.0.0
 
@@ -25,7 +22,7 @@ Symposium, April 2008, pp. 1071–1074.
 
 
 How Does it Work?
-_________________
+-----------------
 
 Log lines are iteratively clustered, resulting in zero duplication of data, which helps ensure the algorithm stays memory efficent.
 The main assumption is that multi-variable tokens are rare, thus token position is used as the main feature by which lines are clustered.
@@ -34,7 +31,7 @@ The prioirty of the cluster position is chosen based on the within cluster entro
 a sufficently high within cluster entropy, it is determined to be a variable.
 
 Example cluster run
-___________________
+-------------------
 
 Log file
 
