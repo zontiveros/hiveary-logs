@@ -33,7 +33,7 @@ a sufficently high within cluster entropy, it is determined to be a variable.
 Example cluster run
 -------------------
 
-Log file
+**Log file**
 
 SSH user1 connect <br/>
 SSH user2 connect <br/>
@@ -43,7 +43,7 @@ SSH user2 disconnect <br/>
 
 The first pass of clustering is done by line length in order to make token positions comparable.
 
-First cluster
+**First Pass**
 
 All lines in our trivial example have a length of 3, so nothing really happens on the first cluster.
 
@@ -53,7 +53,7 @@ SSH user1 disconnect <br/>
 SSH user3 connect <br/>
 SSH user2 disconnect <br/>
 
-Second Cluster
+**Second Pass**
 
 Token position 0 has the lowest entropy level (all tokens in position 0 are the same), so it is chosen as the first cluster position.
 Again, nothing really changes.
@@ -66,7 +66,7 @@ SSH user1 disconnect <br/>
 SSH user3 connect <br/>
 SSH user2 disconnect <br/>
 
-Third Cluster
+**Third Pass**
 
 Token position 2 has the next lowest entropy level (two options over five lines), now two clusters are created.
 
@@ -84,6 +84,8 @@ SSH user2 disconnect <br/>
 
 On the next pass, the entropy level of the remaining position (position 1) is suffciently high that it satifies our condition to qualify as a variable.
 We would then create our final clusters as there are no remaining cluster position candidates.
+
+**Final Pass**
 
 Cluster 1 <br/>
 Event: SSH * connect <br/>
