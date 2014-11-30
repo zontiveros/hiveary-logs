@@ -35,11 +35,11 @@ Example cluster run
 
 Log file
 
-SSH user1 connect
-SSH user2 connect
-SSH user1 disconnect
-SSH user3 connect
-SSH user2 disconnect
+SSH user1 connect <br/>
+SSH user2 connect <br/>
+SSH user1 disconnect <br/>
+SSH user3 connect <br/>
+SSH user2 disconnect <br/>
 
 The first pass of clustering is done by line length in order to make token positions comparable.
 
@@ -47,11 +47,11 @@ First cluster
 
 All lines in our trivial example have a length of 3, so nothing really happens on the first cluster.
 
-SSH user1 connect
-SSH user2 connect
-SSH user1 disconnect
-SSH user3 connect
-SSH user2 disconnect
+SSH user1 connect <br/>
+SSH user2 connect <br/>
+SSH user1 disconnect <br/>
+SSH user3 connect <br/>
+SSH user2 disconnect <br/>
 
 Second Cluster
 
@@ -60,35 +60,37 @@ Again, nothing really changes.
 
 cluster.indexes = [0]
 
-SSH user1 connect
-SSH user2 connect
-SSH user1 disconnect
-SSH user3 connect
-SSH user2 disconnect
+SSH user1 connect <br/>
+SSH user2 connect <br/>
+SSH user1 disconnect <br/>
+SSH user3 connect <br/>
+SSH user2 disconnect <br/>
 
 Third Cluster
 
 Token position 2 has the next lowest entropy level (two options over five lines), now two clusters are created.
 
 cluster1.indexes = [0,2]
-SSH user1 connect
-SSH user2 connect
-SSH user3 connect
+
+SSH user1 connect <br/>
+SSH user2 connect <br/>
+SSH user3 connect <br/>
 
 
 cluster2.indexes = [0,2]
-SSH user1 disconnect
-SSH user2 disconnect
+
+SSH user1 disconnect <br/>
+SSH user2 disconnect <br/>
 
 On the next pass, the entropy level of the remaining position (position 1) is suffciently high that it satifies our condition to qualify as a variable.
 We would then create our final clusters as there are no remaining cluster position candidates.
 
-Cluster 1
-Event: SSH * connect
-Probability: SSH [(user1, 1), (user2,1), (user3,1)] connect
+Cluster 1 <br/>
+Event: SSH * connect <br/>
+Probability: SSH [(user1, 1), (user2,1), (user3,1)] connect <br/>
 
-Cluster 2
-Event: SSH * disconnect
-Probability: SSH [(user1, 1), (user2, 1)] disconnect
+Cluster 2 <br/>
+Event: SSH * disconnect <br/>
+Probability: SSH [(user1, 1), (user2, 1)] disconnect <br/>
 
 
